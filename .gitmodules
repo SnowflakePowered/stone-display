@@ -1,0 +1,3 @@
+[submodule "stone"]
+	path = src/stone
+	url = https://github.com/SnowflakePowered/stone
