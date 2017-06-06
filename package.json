@@ -1,0 +1,25 @@
+{
+  "name": "stone-display",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "material-ui": "next",
+    "mui-jss-inject": "^0.0.3",
+    "raw-loader": "^0.5.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-markdown-renderer": "^1.3.0",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "stone-definitions": "7.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
