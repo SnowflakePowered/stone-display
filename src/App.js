@@ -3,13 +3,17 @@ import React, { Component } from 'react'
 import './App.css'
 import 'typeface-roboto'
 
-import { version, Platforms, Controllers } from 'stone-definitions'
-import List, { ListItem, ListSubheader } from 'material-ui/List'
-import Drawer from 'material-ui/Drawer'
-import Divider from 'material-ui/Divider'
+import { Platforms, Controllers } from 'stone-definitions'
+
 import Typography from 'material-ui/Typography'
 import injectSheet from 'mui-jss-inject'
+import IconButton from 'material-ui/IconButton'
+import MenuIcon from 'material-ui-icons/Menu'
+
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+
+import AppDrawer from './AppDrawer'
+
 import PlatformsList from './PlatformsList'
 import ControllersList from './ControllersList'
 
@@ -26,29 +30,20 @@ import ControllerSpec from './stone/spec/Controllers.md'
 import PlatformSpec from './stone/spec/Platform.md'
 import Versioning from './stone/spec/Versioning.md'
 
+import withWidth, { isWidthUp } from 'material-ui/utils/withWidth'
+
 const styles = {
-  drawerPaper: {
-    width: 250,
-    position: 'fixed'
-  },
   container: {
-    display: 'grid',
-    gridTemplateColumns: '[drawer] 250px [main] auto',
-    minHeight: '100vh'
+    display: 'flex'
   },
   innerContainer: {
-    gridColumn: 'main'
+    width: '100%'
   },
   appBar: {
     position: 'relative'
   },
   appBarPaper: {
     backgroundColor: purple[300]
-  },
-  toolbar: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'center'
   },
   mainContent: {
     height: 'calc(100vh - 64px)',
@@ -59,32 +54,34 @@ const styles = {
 }
 
 class App extends Component {
-  render () {
+  state = {
+    drawerOpen: false
+  }
+
+  handleDrawerClose = () => {
+    this.setState({ drawerOpen: false })
+  }
+
+  handleDrawerToggle = () => {
+    this.setState({ drawerOpen: !this.state.drawerOpen })
+  }
+
+  render = () => {
+    const drawerDocked = isWidthUp('lg', this.props.width)
     return (
       <Router>
         <div className={this.props.classes.container}>
-          <Drawer open docked paperClassName={this.props.classes.drawerPaper}>
-            <Toolbar className={this.props.classes.toolbar}>
-              <Typography type="subheading">Stone</Typography>
-              <Typography type="caption">{version}</Typography>
-            </Toolbar>
-            <Divider />
-            <List>
-              <Link to="/"><ListItem button>Home</ListItem></Link>
-              <ListSubheader>Definitions</ListSubheader>
-              <Link to="/defs/platforms"><ListItem button>Platforms</ListItem></Link>
-              <Link to="/defs/controllers"><ListItem button>Controllers</ListItem></Link>
-              <Divider />
-              <ListSubheader>Specifications</ListSubheader>
-              <Link to="/spec/platforms"><ListItem button>Platforms</ListItem></Link>
-              <Link to="/spec/controllers"><ListItem button>Controllers</ListItem></Link>
-              <Link to="/spec/versioning"><ListItem button>Versioning</ListItem></Link>
-            </List>
-          </Drawer>
-
+          <AppDrawer docked={drawerDocked} onClick={this.handleDrawerClose} open={drawerDocked ? true : this.state.drawerOpen} />
           <div className={this.props.classes.innerContainer}>
             <AppBar className={this.props.classes.appBar} classes={{ appBar: this.props.classes.appBarPaper }}>
               <Toolbar>
+                {
+                  (!drawerDocked
+                    ? <IconButton contrast>
+                      <MenuIcon onClick={this.handleDrawerToggle} />
+                    </IconButton>
+                    : '')
+                }
                 <Typography type="title" colorInherit>
                   <Route path="/defs/platforms" render={() => <span>Platform Definitions</span>} />
                   <Route path="/defs/controllers" render={() => <span>Controller Layout Definitions</span>} />
@@ -97,7 +94,7 @@ class App extends Component {
             </AppBar>
             <div className={this.props.classes.mainContent}>
               <Switch>
-                <Route exact path="/" render={() => <Markdown markdown={Home} />}/>
+                <Route exact path="/" render={() => <Markdown markdown={Home} />} />
                 <Route path="/spec/platforms" render={() => <Markdown markdown={PlatformSpec} />} />
                 <Route path="/spec/controllers" render={() => <Markdown markdown={ControllerSpec} />} />
                 <Route path="/spec/versioning" render={() => <Markdown markdown={Versioning} />} />
@@ -113,4 +110,4 @@ class App extends Component {
   }
 }
 
-export default injectSheet(styles)(App)
+export default injectSheet(styles)(withWidth()(App))

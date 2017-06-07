@@ -8,6 +8,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "material-ui": "next",
+    "material-ui-icons": "^1.0.0-alpha.3",
     "mui-jss-inject": "^0.0.3",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",
