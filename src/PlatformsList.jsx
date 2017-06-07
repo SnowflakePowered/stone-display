@@ -11,12 +11,11 @@ import Link from './Link'
 import Button from 'material-ui/Button'
 import Drawer from 'material-ui/Drawer'
 import withWidth, { isWidthUp } from 'material-ui/utils/withWidth'
+import compose from 'recompose/compose'
 
 const styles = {
   container: {
     display: 'flex',
-    gridTemplateColumns: '[list] 25% [main] auto',
-    gridTemplateRows: '100%',
     height: '100%',
     width: '100%'
   },
@@ -235,4 +234,4 @@ class PlatformList extends React.Component {
   }
 }
 
-export default injectSheet(styles)(withWidth()(withRouter(PlatformList)))
+export default compose(withRouter, withWidth(), injectSheet(styles))(PlatformList)

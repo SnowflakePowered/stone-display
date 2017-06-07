@@ -10,6 +10,7 @@ import Paper from 'material-ui/Paper'
 import Link from './Link'
 import Drawer from 'material-ui/Drawer'
 import withWidth, { isWidthUp } from 'material-ui/utils/withWidth'
+import compose from 'recompose/compose'
 
 const styles = {
   container: {
@@ -248,4 +249,4 @@ class ControllerList extends React.Component {
   }
 }
 
-export default injectSheet(styles)(withWidth()(withRouter(ControllerList)))
+export default compose(withRouter, withWidth(), injectSheet(styles))(ControllerList)
