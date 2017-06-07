@@ -10,7 +10,7 @@ import injectSheet from 'mui-jss-inject'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 
 import AppDrawer from './AppDrawer'
 
