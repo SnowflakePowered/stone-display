@@ -19,7 +19,6 @@ import ControllersList from './ControllersList'
 
 import { purple, grey } from 'material-ui/styles/colors'
 
-import Link from './Link'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 
@@ -88,7 +87,7 @@ class App extends Component {
                   <Route path="/spec/platforms" render={() => <span>Specification &mdash; Platforms</span>} />
                   <Route path="/spec/controllers" render={() => <span>Specification &mdash; Controllers</span>} />
                   <Route path="/spec/versioning" render={() => <span>Versioning</span>} />
-                  <Route exact path="/" render={() => <span>Stone</span>} />
+                  <Route exact path="/" render={() => <span>Home</span>} />
                 </Typography>
               </Toolbar>
             </AppBar>
