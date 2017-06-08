@@ -76,8 +76,8 @@ class App extends Component {
               <Toolbar>
                 {
                   (!drawerDocked
-                    ? <IconButton contrast>
-                      <MenuIcon onClick={this.handleDrawerToggle} />
+                    ? <IconButton contrast onClick={this.handleDrawerToggle}>
+                      <MenuIcon />
                     </IconButton>
                     : '')
                 }
