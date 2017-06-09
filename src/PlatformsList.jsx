@@ -86,21 +86,21 @@ const PlatformDisplay = ({ platform, classes, drawerDocked, handleDrawerToggle }
         <TableHead>
           <TableRow>
             <TableCell>Data</TableCell>
-            <TableCell>Value</TableCell>
+            <TableCell disablePadding >Value</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
             <TableCell compact className={classes.tableCell}><Typography type="caption">Stone Platform ID</Typography></TableCell>
-            <TableCell compact className={classes.tableCell}><Typography><pre>{platform.PlatformID}</pre></Typography></TableCell>
+            <TableCell compact disablePadding className={classes.tableCell}><Typography><pre>{platform.PlatformID}</pre></Typography></TableCell>
           </TableRow>
           <TableRow>
             <TableCell compact className={classes.tableCell}><Typography type="caption">Friendly Name</Typography></TableCell>
-            <TableCell compact className={classes.tableCell}><Typography>{platform.FriendlyName}</Typography></TableCell>
+            <TableCell compact disablePadding className={classes.tableCell}><Typography>{platform.FriendlyName}</Typography></TableCell>
           </TableRow>
           <TableRow>
             <TableCell compact className={classes.tableCell}><Typography type="caption">Maximum Inputs</Typography></TableCell>
-            <TableCell compact className={classes.tableCell}><Typography><pre>{platform.MaximumInputs}</pre></Typography></TableCell>
+            <TableCell compact disablePadding className={classes.tableCell}><Typography><pre>{platform.MaximumInputs}</pre></Typography></TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -112,14 +112,14 @@ const PlatformDisplay = ({ platform, classes, drawerDocked, handleDrawerToggle }
         <TableHead>
           <TableRow>
             <TableCell>Metadata Key</TableCell>
-            <TableCell>Value</TableCell>
+            <TableCell disablePadding >Value</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {Object.entries(platform.Metadata).map(([k, v]) =>
             <TableRow key={k}>
               <TableCell compact className={classes.tableCell}><Typography type="caption">{k}</Typography></TableCell>
-              <TableCell compact className={classes.tableCell}><Typography>{v}</Typography></TableCell>
+              <TableCell compact disablePadding className={classes.tableCell}><Typography>{v}</Typography></TableCell>
             </TableRow>)}
         </TableBody>
       </Table>
@@ -131,14 +131,14 @@ const PlatformDisplay = ({ platform, classes, drawerDocked, handleDrawerToggle }
         <TableHead>
           <TableRow>
             <TableCell>File Extension</TableCell>
-            <TableCell>Content-Type</TableCell>
+            <TableCell disablePadding>Content-Type</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {Object.entries(platform.FileTypes).map(([k, v]) =>
             <TableRow key={k}>
               <TableCell compact className={classes.tableCell}><Typography type="caption">{k}</Typography></TableCell>
-              <TableCell compact className={classes.tableCell}><Typography><pre>{v}</pre></Typography></TableCell>
+              <TableCell compact disablePadding className={classes.tableCell}><Typography><pre>{v}</pre></Typography></TableCell>
             </TableRow>)}
         </TableBody>
       </Table>
@@ -151,14 +151,14 @@ const PlatformDisplay = ({ platform, classes, drawerDocked, handleDrawerToggle }
           <TableHead>
             <TableRow>
               <TableCell>File Name</TableCell>
-              <TableCell>Known Hashes</TableCell>
+              <TableCell disablePadding>Known Hashes</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {Object.entries(platform.BiosFiles || []).map(([k, v]) =>
               <TableRow key={k}>
                 <TableCell compact className={classes.tableCell}><Typography>{k}</Typography></TableCell>
-                <TableCell compact className={classes.tableCell}>{v.map(hash => <pre>{hash}</pre>)}</TableCell>
+                <TableCell compact disablePadding className={classes.tableCell}>{v.map(hash => <pre>{hash}</pre>)}</TableCell>
               </TableRow>)}
           </TableBody>
         </Table>
