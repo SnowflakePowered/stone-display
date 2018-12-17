@@ -7,7 +7,7 @@
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "material-ui": "next",
+    "material-ui": "1.0.0-alpha.16",
     "material-ui-icons": "^1.0.0-alpha.3",
     "mui-jss-inject": "^0.0.3",
     "raw-loader": "^0.5.1",
@@ -17,7 +17,7 @@
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "recompose": "^0.23.4",
-    "stone-definitions": "7.1.0",
+    "stone-definitions": "7.1.1",
     "typeface-roboto": "^0.0.22"
   },
   "devDependencies": {
