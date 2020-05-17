@@ -63,6 +63,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "homepage": "https://stone.snowflakepowe.red",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
