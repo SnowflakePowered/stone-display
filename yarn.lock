@@ -7865,10 +7865,10 @@ stifle@^1.0.2:
   resolved "https://registry.yarnpkg.com/stifle/-/stifle-1.1.0.tgz#1680b5de9de04074164f4ac0fe7d34db6b6f7229"
   integrity sha1-FoC13p3gQHQWT0rA/n0022tvcik=
 
-stone-definitions@9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/stone-definitions/-/stone-definitions-9.2.0.tgz#e50c0f233ce53ca9ecfebf7751b36d5d36282d20"
-  integrity sha512-uolafirPBJ3CEIDzObnnXz6J3kGx4AzYwHs306a4NcRjGb2sLLbOdeIY8vROqHlLvAaUtbH3VdkIu1Mb9QMk1g==
+stone-definitions@10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/stone-definitions/-/stone-definitions-10.0.0.tgz#3caf0b952d53642da81279fa517b8e818bad777a"
+  integrity sha512-zHCLsN+7eHLpPssVHC+tz4V1IUjWzCNhEsDT59QTXcHmnE0NXiUVyXhF9jyYmm5fZ/qlGLPxazCGLYjUzJQLHg==
 
 stream-browserify@^2.0.1:
   version "2.0.2"
